@@ -12,9 +12,10 @@ public class ContatoController {
     public String mostrarHome() {
         return "index";
     }
+    //Dentro do @PostMapping, vc n precisa colocar o que eu coloquei.
     @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String mostrarResposta(Contato contato, Model model) {
-        model.addAttribute("name", contato.getNome());
+        model.addAttribute("nome", contato.getNome());
         model.addAttribute("email", contato.getEmail());
         return "resposta";
     }
